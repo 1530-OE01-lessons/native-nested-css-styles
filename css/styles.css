@@ -1,0 +1,78 @@
+/* As of early 2023, the CSS Nesting Module was added to the W3C working draft (see https://www.w3.org/TR/css-nesting-1/). Since then, browser support for this syntax has broadened. 
+  
+  Currently (as of late 2024), browser support is at roughly 90% of the global market share (see https://caniuse.com/css-nesting). */
+
+:root {
+  --bg: #0e0a23;
+  --cyan: #00bdff;
+  --pink: #f52fa0;
+  --purple: #9a3ea9;
+}
+
+main {
+  font-family: "Cantarell", sans-serif;
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+aside,
+.card-copy {
+  position: relative;
+  border-radius: 2px;
+}
+
+aside:before {
+  content: " ";
+  background-color: var(--pink);
+  height: 36.25rem;
+  width: 100%;
+  position: absolute;
+  left: -2.5rem;
+  top: -2.5rem;
+  z-index: 0;
+  border-radius: 2px;
+}
+
+.card-copy {
+  color: var(--bg);
+  background-color: var(--cyan);
+  height: 36.25rem;
+  width: 18rem;
+  z-index: 10;
+  padding: 4rem 3rem;
+  h2 {
+    font-family: "Fjalla One", sans-serif;
+    font-size: 2.25rem;
+    font-weight: 400;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  svg {
+    margin: 1.5rem 0 1.5rem -9rem;
+    width: 16rem;
+    path {
+      stroke: #fff;
+    }
+  }
+}
+
+.btn {
+  background-color: var(--bg);
+  color: #fff;
+  border-radius: 2px;
+  display: block;
+  font-size: 1.125rem;
+  margin-top: 2rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3 ease;
+  &:hover {
+    background-color: #180f4d;
+  }
+}
